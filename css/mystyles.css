@@ -1,0 +1,147 @@
+body {
+  font-family: avenir next, helvetica, sans-serif;
+}
+
+h2 {
+  color:#E395CA !important;
+}
+
+a:link {
+  color: #F6AAC5;
+  text-decoration: none;
+}
+a:visited {
+  color: #F6AAC5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #874CE0;
+  text-decoration: none;
+}
+
+
+.yellow {
+  color: #ffdd57;
+}
+
+.about {
+  background-color: white;
+}
+
+.grey {
+  background-color: #f5f5f5;
+}
+
+.padding-home {
+
+  padding-left: 200px;
+}
+.has-text-animation {
+  padding-right: 0.1em;
+  border-right: 3px solid #E799CA;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+span.wave {
+  animation-name: wave-animation;    /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;          /* Change to speed up or slow down */
+  animation-iteration-count: infinite;    /* Never stop waving :) */
+  transform-origin: 70% 70%;         /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(  0.0deg) }
+   10% { transform: rotate(-10.0deg) }    /* The following four values can be played with to make the waving more or less extreme */
+   20% { transform: rotate( 12.0deg) }
+   30% { transform: rotate(-10.0deg) }
+   40% { transform: rotate(  9.0deg) }
+   50% { transform: rotate(  0.0deg) }    /* Reset for the last half to pause */
+  100% { transform: rotate(  0.0deg) }
+}
+
+.CVtext {
+  color:white !important;
+}
+
+.test123 {
+  animation-name: wave-animation;    /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;          /* Change to speed up or slow down */
+  animation-iteration-count: infinite;    /* Never stop waving :) */
+  transform-origin: 70% 70%;         /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+
+
+.fab {
+  padding-right: 20px;
+  color: #DE8FCB;
+}
+
+.fas {
+  color: #DE8FCB;
+  padding-right:20px;
+
+}
+
+.paddingAbove {
+  padding-top: 100px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #ffdd57;
+
+}
+
+.navbar {
+&.is-transparent {
+background-color: transparent;
+background-image: none;
+}
+}
+
+.details {
+
+  padding-bottom:32px;
+}
+
+table {
+  background-color: transparent !important;
+}
+
+#map {
+  height: 50vh;
+  width: 100%;
+}
+
+#aboutImage{
+
+}
+
+
+.footnote {
+  padding-bottom: 2.5%;
+}
+
+.dark {
+  background-color: #e7e7e7;
+}
+
+.padder {
+  padding-right: 5%;
+}
+
+.padderRegister {
+  padding-top:15%;
+}
+.padderEvent {
+  padding-top:20%;
+  padding-left:5%;
+}
+.padderAbout {
+  padding-top: 5%;
+  padding-left:5%;
+}

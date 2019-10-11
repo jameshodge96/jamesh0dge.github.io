@@ -1,0 +1,27 @@
+{
+  "name": "jameshodge1996.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch style.sass css/style.css",
+    "build": "sass -s compressed style.sass css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameshodge1996/jameshodge1996.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jameshodge1996/jameshodge1996.github.io/issues"
+  },
+  "homepage": "https://github.com/jameshodge1996/jameshodge1996.github.io#readme",
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "bulma-steps-component": "^0.5.3",
+    "sass": "^1.17.0"
+  }
+}
