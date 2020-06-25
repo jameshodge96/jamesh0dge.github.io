@@ -6,7 +6,6 @@ let randomThings = [
   'designer ✏️,',
   'photographer 📸,',
   'VR/AR Designer 🌍,',
-  'gamer 🎮,',
   'film buff 🎬,',
 
 ]
