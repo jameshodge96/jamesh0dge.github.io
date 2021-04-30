@@ -1,0 +1,150 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>James Hodge - thesis</title>
+    <meta name=”description” content="James Hodge personal thesis updates">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bulma-divider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+  </head>
+  <body>
+      <section class="hero is-primary ">
+        
+          <div class="hero-body">
+            <div class="columns">
+              <div class="column">
+              <p class="title">
+                  Thesis
+              </p>
+              <p class="subtitle">
+                This page contains most recent thesis updates
+              </p>
+            </div>
+            <div class="column">
+              <button class="button is-danger is-light moveRight">Local Repositry</button>
+              </div>
+            </div>
+          </div>
+      </section>
+      <br>
+<section>
+  <div class="wrap">
+    <div class="container">
+
+      <div class="columns">
+        <div class="left">
+          <div class="column is-one-thirds"> <h3 class="subtitle is-3"> Thesis downloads </h3> 
+            <div id="documents"></div>  </div>
+          </div>
+          <div class="column"><h3 class="subtitle is-3"> Changes </h3> 
+            <div class="right">
+               <div id="changes"> </div></div>
+               </div>
+      </div>
+    </div>
+  </div>
+    </section>
+    
+  </body>
+
+<script type="module">
+
+main();
+filesLayout();
+
+
+function fetchCommits(username, repo) {
+  return window
+    .fetch(`https://api.github.com/repos/${username}/${repo}/commits`)
+    .then((r) => r.json());
+}
+
+function fetchFiles(username, repo, folder) {
+    return window
+    .fetch(`https://api.github.com/repos/${username}/${repo}/contents/${folder}`)
+    .then((r) => r.json());
+}
+
+function createElement(element, attributes, ...children) {
+  const e = document.createElement(element);
+  Object.assign(e, attributes);
+  e.append(...children.flat());
+  return e;
+}
+
+function timeFormat(commitDate) {
+    const isoString = commitDate;
+    
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    const date = new Date(isoString);
+    const americanDate = new Intl.DateTimeFormat("en-US", options).format(date);
+
+    const time = document.createElement("time");
+    time.setAttribute("datetime", isoString);
+    time.innerText = `Published on ${americanDate}`;
+    return time;
+}
+
+function link(url){
+    const createA = document.createElement('a');
+    const createText = document.createTextNode('See changes')
+    createA.setAttribute('href',url);
+
+    createA.appendChild(createText);
+
+    return createA;
+}
+function documentLink(name, url) {
+  const createA = document.createElement('a');
+  const createText = document.createTextNode(name);
+  createA.setAttribute('href', url);
+  createA.appendChild(createText);
+
+  return createA;
+}
+
+async function filesLayout() {
+    try {
+        const contents = await fetchFiles("jameshodge96", "Thesis", "Word_Docs");
+
+        const elements = contents.map((content) =>
+        createElement(
+            "h2", {className:"subtitle"}, documentLink(content.name, content.download_url)), 
+        );
+        
+        document.getElementById("documents").appendChild(
+          createElement("div", { className: "git-documents"}, ...elements)
+          );
+    } catch (error) {
+        console.error("Failed to fetch git contents");
+        console.error(error);
+    }
+}
+
+async function main() {
+  try {
+    const commits = await fetchCommits("jameshodge96", "Thesis");
+
+    const elements = commits.map((commit) =>
+      createElement(
+        "div",
+        { className: "card" },
+        createElement("header", {className:"card-header"}, 
+            createElement("p", {className:"card-header-title"},"Update: " + commit.commit.message)), 
+        createElement("div", {className:"card-content"}, 
+            createElement("p", {className:"content"}, timeFormat(commit.commit.author.date),
+            createElement("p", {className:"content"}, link(commit.html_url))))
+        )
+    );
+
+    document.getElementById("changes").appendChild(
+      createElement("div", { className: "git-commits" }, ...elements)
+    );
+  } catch (error) {
+    console.error("Failed to fetch git commits"); 
+    console.error(error);
+  }
+}
+</script>

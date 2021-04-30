@@ -3,23 +3,22 @@ body {
 }
 
 h2 {
-  color:#E395CA !important;
+  color: #e395ca !important;
 }
 
 a:link {
-  color: #F6AAC5;
+  color: #f6aac5;
   text-decoration: none;
 }
 a:visited {
-  color: #F6AAC5;
+  color: #f6aac5;
   text-decoration: none;
 }
 
 a:hover {
-  color: #874CE0;
+  color: #874ce0;
   text-decoration: none;
 }
-
 
 .yellow {
   color: #ffdd57;
@@ -34,56 +33,66 @@ a:hover {
 }
 
 .padding-home {
-
   padding-left: 200px;
 }
 .has-text-animation {
   padding-right: 0.1em;
-  border-right: 3px solid #E799CA;
+  border-right: 3px solid #e799ca;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 span.wave {
-  animation-name: wave-animation;    /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;          /* Change to speed up or slow down */
-  animation-iteration-count: infinite;    /* Never stop waving :) */
-  transform-origin: 70% 70%;         /* Pivot around the bottom-left palm */
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate(  0.0deg) }
-   10% { transform: rotate(-10.0deg) }    /* The following four values can be played with to make the waving more or less extreme */
-   20% { transform: rotate( 12.0deg) }
-   30% { transform: rotate(-10.0deg) }
-   40% { transform: rotate(  9.0deg) }
-   50% { transform: rotate(  0.0deg) }    /* Reset for the last half to pause */
-  100% { transform: rotate(  0.0deg) }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  } /* The following four values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(12deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .CVtext {
-  color:white !important;
+  color: white !important;
 }
 
 .test123 {
-  animation-name: wave-animation;    /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;          /* Change to speed up or slow down */
-  animation-iteration-count: infinite;    /* Never stop waving :) */
-  transform-origin: 70% 70%;         /* Pivot around the bottom-left palm */
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
-
-
 .fab {
   padding-right: 20px;
-  color: #DE8FCB;
+  color: #de8fcb;
 }
 
 .fas {
-  color: #DE8FCB;
-  padding-right:20px;
-
+  color: #de8fcb;
+  padding-right: 20px;
 }
 
 .paddingAbove {
@@ -93,19 +102,17 @@ span.wave {
 .underline {
   text-decoration: underline;
   text-decoration-color: #ffdd57;
-
 }
 
 .navbar {
-&.is-transparent {
-background-color: transparent;
-background-image: none;
-}
+  &.is-transparent {
+    background-color: transparent;
+    background-image: none;
+  }
 }
 
 .details {
-
-  padding-bottom:32px;
+  padding-bottom: 32px;
 }
 
 table {
@@ -117,10 +124,8 @@ table {
   width: 100%;
 }
 
-#aboutImage{
-
+#aboutImage {
 }
-
 
 .footnote {
   padding-bottom: 2.5%;
@@ -135,13 +140,31 @@ table {
 }
 
 .padderRegister {
-  padding-top:15%;
+  padding-top: 15%;
 }
 .padderEvent {
-  padding-top:20%;
-  padding-left:5%;
+  padding-top: 20%;
+  padding-left: 5%;
 }
 .padderAbout {
   padding-top: 5%;
-  padding-left:5%;
+  padding-left: 5%;
+}
+.git-commits .card:not(:last-child) {
+  margin-bottom: 1em;
+}
+.right {
+  height: 100vh;
+  flex-basis: 40%;
+  overflow: auto;
+  padding: 1px;
+}
+.left {
+  flex-basis: 60%;
+}
+.wrap {
+  display: flex;
+}
+.moveRight {
+  float: right;
 }
